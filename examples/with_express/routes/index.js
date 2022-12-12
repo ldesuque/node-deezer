@@ -37,7 +37,7 @@ exports.index = function(req, res) {
 
 	// Special permissions:
 	// (defaults to basic_access)
-	var permissions = ['basic_access', 'delete_library'];
+	var permissions = ['basic_access', 'delete_library', 'manage_library', 'manage_community'];
 
 
 
