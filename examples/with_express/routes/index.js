@@ -37,7 +37,7 @@ exports.index = function(req, res) {
 
 	// Special permissions:
 	// (defaults to basic_access)
-	var permissions = ['basic_access'];
+	var permissions = ['basic_access', 'delete_library'];
 
 
 
@@ -87,7 +87,6 @@ exports.deezerCallback = function(req, res, next) {
 	// `code` should have been handed back by Deezer as a parameter
 	// if it was not, an error occurred, and we must handle it here
 	var code = req.param('code');
-	console.log("This is the code : ", code)
 	if (!code) {
 		var err = req.param('error_reason');
 
@@ -158,7 +157,7 @@ exports.deezerCallback = function(req, res, next) {
 
 		// Now that we're logged in, we can redirect to the "dashboard"
 		// or whatever
-		res.redirect('/dashboard', code);
+		res.redirect('/dashboard');
 	});
 };
 
